@@ -1,17 +1,16 @@
 ---
 const imagenes = [
-  { src: './src/assets/images/gallery/1.JPG', width: 800, height: "auto" },
-  { src: './src/assets/images/gallery/2.JPG', width: 800, height: "auto" },
-  { src: './src/assets/images/gallery/3.JPG', width: 800, height: "auto" },
-  { src: './src/assets/images/gallery/4.JPG', width: 800, height: "auto" },
-  { src: './src/assets/images/gallery/5.JPG', width: 800, height: "auto" },
+  { src: '/gallery/1.JPG', width: 800, height: "auto" },
+  { src: '/gallery/2.JPG', width: 800, height: "auto" },
+  { src: '/gallery/3.JPG', width: 800, height: "auto" },
+  { src: '/gallery/4.JPG', width: 800, height: "auto" },
+  { src: '/gallery/5.JPG', width: 800, height: "auto" },
 ];
 ---
 <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css" />
 
 <div class="swiper-container my-8">
   <div class="swiper-wrapper" id="galeria-boda">
-    <!-- Generamos cada slide dinámicamente -->
     {imagenes.map(src => (
       <div class="swiper-slide">
         <a 
@@ -26,11 +25,6 @@ const imagenes = [
       </div>
     ))}
   </div>
-  
-  <!-- Opcional: Añadir paginación (los puntitos) -->
-  <div class="swiper-pagination"></div>
-
-  <!-- Opcional: Añadir flechas de navegación -->
   <div class="swiper-button-prev"></div>
   <div class="swiper-button-next"></div>
 </div>
