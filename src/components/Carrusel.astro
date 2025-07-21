@@ -1,0 +1,124 @@
+---
+const imagenes = [
+  { src: '/src/assets/images/gallery/1.JPG', width: 800, height: "auto" },
+  { src: '/src/assets/images/gallery/2.JPG', width: 800, height: "auto" },
+  { src: '/src/assets/images/gallery/3.JPG', width: 800, height: "auto" },
+  { src: '/src/assets/images/gallery/4.JPG', width: 800, height: "auto" },
+  { src: '/src/assets/images/gallery/5.JPG', width: 800, height: "auto" },
+];
+---
+<link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css" />
+
+<div class="swiper-container my-8">
+  <div class="swiper-wrapper" id="galeria-boda">
+    <!-- Generamos cada slide dinámicamente -->
+    {imagenes.map(src => (
+      <div class="swiper-slide">
+        <a 
+          href={src.src} 
+          data-pswp-width={src.width}
+          data-pswp-height={src.height}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+            <img src={src.src} alt="Imagen del carrusel" class="" />
+        </a>
+      </div>
+    ))}
+  </div>
+  
+  <!-- Opcional: Añadir paginación (los puntitos) -->
+  <div class="swiper-pagination"></div>
+
+  <!-- Opcional: Añadir flechas de navegación -->
+  <div class="swiper-button-prev"></div>
+  <div class="swiper-button-next"></div>
+</div>
+
+<script>
+  // Importamos Swiper y sus módulos
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay, EffectCoverflow } from 'swiper/modules';
+  import PhotoSwipeLightbox from 'photoswipe/lightbox';
+  // Importamos los estilos base de Swiper
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+
+  // 3. Inicializamos Swiper en el elemento .swiper-container
+  const swiper = new Swiper('.swiper-container', {
+    // Le decimos a Swiper que use los módulos que importamos
+    modules: [Navigation, Pagination, Autoplay, EffectCoverflow],
+
+    // --- Configuración del carrusel ---
+    effect: 'coverflow',     // Efecto visual que ayuda a centrar
+    grabCursor: true,
+    centeredSlides: true,    // ¡Esta es la propiedad más importante! Centra el slide activo
+    loop: true, // Para que sea un bucle infinito
+    spaceBetween: 10, // Espacio entre slides
+    slidesPerView: 'auto',   // Permite que los slides tengan anchos flexibles si es necesario
+    
+    coverflowEffect: {
+      rotate: 50,
+      stretch: 0,
+      depth: 100,
+      modifier: 1,
+      slideShadows: true,
+    },
+
+    // Autoplay (opcional)
+    autoplay: {
+      delay: 3000, // Cambia de slide cada 3 segundos
+      disableOnInteraction: false,
+    },
+
+    // Paginación (los puntitos)
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+
+    // Flechas de navegación
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Breakpoints para un diseño responsive (muy importante)
+    breakpoints: {
+      // Cuando el ancho de la pantalla es >= 640px
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 20,
+      },
+      // Cuando el ancho de la pantalla es >= 1024px
+      1024: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
+    },
+  });
+  const lightbox = new PhotoSwipeLightbox({
+    gallery: '#galeria-boda', // Apunta al contenedor de los slides
+    children: 'a',           // Los elementos clicables son los enlaces <a>
+    pswpModule: () => import('photoswipe'), // Carga el módulo de PhotoSwipe dinámicamente
+  });
+
+  lightbox.init(); // ¡Activa el lightbox!
+</script>
+
+<!-- 4. Estilos personalizados (opcional) para las flechas y puntitos -->
+<style>
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white; /* Cambia el color de las flechas */
+    background-color: rgba(0, 0, 0, 0.3);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: white; /* Cambia el color del puntito activo */
+  }
+</style>

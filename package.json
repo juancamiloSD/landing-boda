@@ -9,7 +9,19 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/svelte": "^7.1.0",
     "@astrojs/vercel": "^8.1.5",
-    "astro": "^5.9.3"
+    "@tailwindcss/vite": "^4.1.11",
+    "aos": "^2.3.4",
+    "astro": "^5.9.3",
+    "photoswipe": "^5.4.4",
+    "react-countdown": "^2.3.6",
+    "svelte": "^5.36.8",
+    "swiper": "^11.2.10",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "@types/aos": "^3.0.7"
   }
 }
