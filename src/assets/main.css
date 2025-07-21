@@ -38,32 +38,6 @@ a{
     text-decoration: none;
 }
 
-@media (min-width: 320px){
-    .section1_container,
-    .section2_container,
-    .section3_container,
-    .section4_container,
-    .section5_container,
-    .section6_container,
-    .section7_container,
-    .section8_container,
-    .section9_container{
-        padding: 50px 16px 50px 16px;
-    }
-}
-@media (min-width: 1280px){
-    .section1_container,
-    .section2_container,
-    .section3_container,
-    .section4_container,
-    .section5_container,
-    .section6_container,
-    .section7_container,
-    .section8_container,
-    .section9_container{
-        padding: 50px;
-    }
-}
 .section1_container{
     background-size: auto;
     background-position: center center;
