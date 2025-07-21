@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getImage } from 'astro:assets';
+
+import img1_cover_2 from '../assets/images/bg3.jpg';
+
+import ref1 from '../assets/dresscode/mujer-ref1.jpg';
+import ref2 from '../assets/dresscode/mujer-ref2.jpg';
+import ref3 from '../assets/dresscode/mujer-ref3.jpg';
+import ref4 from '../assets/dresscode/mujer-ref4.jpg';
+import ref5 from '../assets/dresscode/mujer-ref5.jpg';
+import ref6 from '../assets/dresscode/hombre-ref1.jpg';
+import ref7 from '../assets/dresscode/hombre-ref2.jpg';
+import ref8 from '../assets/dresscode/hombre-ref3.jpg';
+
+import flor1 from '../assets/images/flor1.png';
+import flor2 from '../assets/images/flor2.png';
+
+import logo from '../assets/images/logo-w.png';
+
+const bgImage_2 = await getImage({ src: img1_cover_2 });
+
+const ref1_ = await getImage({ src: ref1 });
+const ref2_ = await getImage({ src: ref2 });
+const ref3_ = await getImage({ src: ref3 });
+const ref4_ = await getImage({ src: ref4 });
+const ref5_ = await getImage({ src: ref5 });
+const ref6_ = await getImage({ src: ref6 });
+const ref7_ = await getImage({ src: ref7 });
+const ref8_ = await getImage({ src: ref8 });
+
+const flor_1 = await getImage({ src: flor1 });
+const flor_2 = await getImage({ src: flor2 });
+
+const logo_ = await getImage({ src: logo });
+
+const galeriaImagenes = [
+  { thumb: ref1.src, full: ref1.src, width: ref1.width, height: ref1.height, alt: "Referencia 1" },
+  { thumb: ref2.src, full: ref2.src, width: ref2.width, height: ref2.height, alt: "Referencia 2" },
+  { thumb: ref3.src, full: ref3.src, width: ref3.width, height: ref3.height, alt: "Referencia 3" },
+  { thumb: ref4.src, full: ref4.src, width: ref4.width, height: ref4.height, alt: "Referencia 4" },
+  { thumb: ref5.src, full: ref5.src, width: ref5.width, height: ref5.height, alt: "Referencia 5" },
+  { thumb: ref6.src, full: ref6.src, width: ref6.width, height: ref6.height, alt: "Referencia 6" },
+  { thumb: ref7.src, full: ref7.src, width: ref7.width, height: ref7.height, alt: "Referencia 7" },
+  { thumb: ref8.src, full: ref8.src, width: ref8.width, height: ref8.height, alt: "Referencia 8" },
+];
+---
+<link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css" />
+
+<Layout>
+    <section class="main">
+        <div class="section1_container flex bg-cover bg-center snap-section relative p-5 md:p-[5rem]" style={`background-image: url(${bgImage_2.src});`}>
+            <div class="flex flex-col w-full">
+                <div class="grid grid-cols-3 items-center pb-[3rem]">
+                    <div class="text-left">
+                        <a href="/" class="internalPage">Volver</a>
+                    </div>
+                    <div class="text-center mx-auto rounded-full !w-[30%] sm:!w-[20%] md:!w-[14%]" style="background:#BBA15D" data-aos="fade-up">
+                        <img src={logo_.src} class="p-3" alt="logo"/>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4" id="galeria-boda">
+                    {galeriaImagenes.map(img => (
+                        <a 
+                        href={img.full} 
+                        data-pswp-width={img.width} 
+                        data-pswp-height={img.height} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        class="block rounded-lg overflow-hidden shadow-lg"
+                        >
+                        <img 
+                            src={img.thumb} 
+                            alt={img.alt} 
+                            class="w-full h-full object-cover"
+                        />
+                        </a>
+                    ))}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        import PhotoSwipeLightbox from 'photoswipe/lightbox';
+
+        const lightbox = new PhotoSwipeLightbox({
+            gallery: '#galeria-boda', 
+            children: 'a',           
+            pswpModule: () => import('photoswipe'),
+        });
+
+        lightbox.init(); 
+    </script>
+</Layout>

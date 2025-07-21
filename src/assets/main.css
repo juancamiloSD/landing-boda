@@ -362,7 +362,21 @@ a{
     padding-top: 50px;
     padding-bottom: 20px;
 }
-
+.internalPage{
+    background-color: rgba(72, 120, 115, 1);
+    color: #fff !important;
+    border: 2px solid #487873;
+    padding: 3px 30px;
+    border-radius: 11px;
+    transition: .5s;
+    font-size: 25px;
+    text-decoration: none;
+}
+.internalPage:hover{
+    background-color: rgba(72, 120, 115, 0);
+    color: #487873 !important;
+    cursor: pointer;
+}
 /* fin section7 */
 
 /* section8 */
