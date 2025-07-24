@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Juan & Diana//Tu Sitio Web//ES
+BEGIN:VEVENT
+UID:boda-juan-y-diana-20250927
+DTSTAMP:20241027T120000Z
+DTSTART:20250927T210000Z
+DTEND:20250928T040000Z
+SUMMARY:Boda de Juan & Diana
+DESCRIPTION:¡Celebra con nosotros el día más importante de nuestras vidas! No olvides confirmar tu asistencia.
+LOCATION:Casa Borinquen,Casa, campestre, Sector Piedragrande, Vía Puerto Tejada, Cali, Valle del Cauca
+END:VEVENT
+END:VCALENDAR

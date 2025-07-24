@@ -64,10 +64,16 @@ const logo_ = await getImage({ src: logo });
 	</div>
 	<div class="section3_container flex flex-col items-center justify-center snap-section h-180 md:h-250 !pt-[10rem] !pb-[7rem] relative" style={`background-image: url(${bgImage_2.src});`}>
 		<img src={flor_2.src} alt="flor 2" class="absolute top-[-20%] md:top-[-30%] right-0 z-1 !w-[80%] md:!w-[50%]" data-aos="fade-up"/>
-		<h2 class="questa !text-3xl md:!text-6xl pb-[2rem]" data-aos="fade-up">¡Nos casamos!</h2>
-		<p class="pari green text-center !text-base md:!text-2xl pb-[2rem]" data-aos="fade-up">El amor que ha crecido en nosotros desde que nos conocimos ha sido un regalo precioso que hemos cultivado con el tiempo llevándonos a buscar en Dios la gracia para formar un hogar.
-			Por esta razón hemos decidido casarnos y compartir contigo esta gran felicidad.</p>
-		<h2 class="questa !mb-5 !text-lg md:!text-3xl pb-[2rem]" data-aos="fade-up">¡Te esperamos!</h2>
+		<h2 class="pari !text-3xl md:!text-6xl pb-[2rem]" data-aos="fade-up">¡Nos casamos!</h2>
+		<p class="questa green text-center !text-base md:!text-2xl pb-[2rem]" data-aos="fade-up">Nuestra historia comenzó cuando apenas aprendíamos a soñar, crecimos juntos, 
+			fuimos testigos de cada una de las etapas de nuestras vidas y hace 17 años nuestras almas han caminado juntas. Soñamos con un día lleno de amor, 
+			alegría y la certeza de que este lazo, que nació en la adolescencia, seguirá creciendo con cada amanecer, celebrando que nuestro amor de siempre se 
+			transformará en un “Para Siempre”.</p>
+		<p class="questa green text-center !text-base md:!text-2xl pb-[2rem]" data-aos="fade-up">
+			Hoy, después de tantos capítulos escritos, queremos celebrar el inicio del más importante: <strong>Unir nuestras vidas en matrimonio con la bendición de Dios</strong> y 
+			queremos compartir esta alegría con quienes más amamos y han sido parte de nuestra historia.
+		</p>	
+		<h2 class="pari !mb-5 !text-lg md:!text-3xl pb-[2rem]" data-aos="fade-up">¡Te esperamos!</h2>
 		<div class="rounded-full !w-[15%] md:!w-[5%]" style="background:#BBA15D" data-aos="fade-up">
 			<img src={logo_.src} class="p-3" alt="logo"/>
 		</div>
@@ -80,9 +86,19 @@ const logo_ = await getImage({ src: logo });
 					<div id="contador">
 						<Contador client:load />
 					</div>
-				</div>
+					<div class="text-center my-8">
+						<a 
+							href="/evento-boda.ics" 
+							download="Boda-Juan-y-Diana.ics"
+							class="inline-block bg-brand-gold text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-all"
+						>
+							<i class="far fa-calendar-plus mr-2"></i>
+							Añadir a mi Calendario
+						</a>
+						</div>
+					</div>
 				<div class="text-center" data-aos="fade-up">
-					<p class="filosofia !text-4xl md:!text-6xl !text-green-900">27 DE SEPTIEMBRE, 2025</p>
+					<p class="filosofia !text-4xl md:!text-6xl !text-green-900">27 DE SEPTIEMBRE 2025</p>
 				</div>
 			</div>
 		</div>
@@ -99,10 +115,10 @@ const logo_ = await getImage({ src: logo });
 				<h4 class="filosofia text-5xl font-semibold" data-aos="fade-up">CASA BORINQUEN</h4>
 				
 				<div class="list flex flex-col my-4 gap-1">
-					<span class="pari dir" data-aos="fade-up">Casa, campestre, Sector Piedragrande</span>
-					<span class="pari dir" data-aos="fade-up">Vía Puerto Tejada</span>
-					<span class="pari dir" data-aos="fade-up">Cali, Valle del Cauca</span>
-					<span class="pari date font-bold mt-2" data-aos="fade-up">3:30 P.M.</span>
+					<span class="questa dir" data-aos="fade-up">Casa, campestre, Sector Piedragrande</span>
+					<span class="questa dir" data-aos="fade-up">Vía Puerto Tejada</span>
+					<span class="questa dir" data-aos="fade-up">Cali, Valle del Cauca</span>
+					<span class="questa date font-bold mt-2" data-aos="fade-up">3:30 P.M.</span>
 				</div>
 				
 				<div class="mt-auto" data-aos="fade-up">
@@ -114,27 +130,32 @@ const logo_ = await getImage({ src: logo });
 		</div>
 		<img src={flor_1.src} alt="flor 1" class="absolute bottom-[-10%] md:bottom-[-30%] left-0 z-1 !w-[80%] md:!w-[40%]" data-aos="fade-up"/>
 	</div>
-	<div class="section6_container p-4 md:p-8 h-220 md:h-250 relative" style={`background-image: url(${bgImage_2.src});`}>
+	<div class="section6_container p-4 md:p-8 h-220 md:h-220  relative" style={`background-image: url(${bgImage_2.src});box-shadow: 0 20px 20px 0px  rgba(72,120,115,.2);`}>
 		<div class="container mx-auto px-4">
 			<div class="gallery w-full overflow-hidden">
 				<Carrusel />
 			</div>
 		</div>
 	</div>
-	<div class="section7_container flex items-center justify-center h-280 md:h-250 snap-section p-4 md:p-8 relative" style={`background-image: url(${bgImage_2.src});`}>
-		<img src={flor_2.src} alt="flor 2" class="absolute top-[-15%] md:top-[-40%] right-0 z-1 !w-[80%] md:!w-[40%]" data-aos="fade-up"/>
+	<div class="py-[5rem] flex flex-col items-center justify-center bg-[#E4E4E4]">
+		<p class="questa !text-base md:!text-2xl text-[#487873] !w-[80%] md:!w-[40%] text-center" data-aos="fade-down">
+			"Somos un lazo de tres hilos: dos corazones que se aman y un Dios que nos sostiene. Y un lazo así, bendecido por Él, jamás se romperá."
+		</p>
+	</div>
+	<div class="section7_container flex items-center justify-center snap-section !pt-[10rem] !pb-[5rem] p-4 md:p-8 relative" style={`background-image: url(${bgImage_2.src});box-shadow: 0 -20px 20px 0px rgba(72,120,115,.2);`}>
+		<img src={flor_2.src} alt="flor 2" class="absolute top-[-15%] md:top-[-20%] right-0 z-1 !w-[80%] md:!w-[40%]" data-aos="fade-up"/>
 		<div 
 			class="card max-w-4xl flex flex-col items-center justify-start text-center bg-white/10 backdrop-blur-sm !px-8 !py-[4rem] rounded-xl border border-white/20"
 			data-aos="fade-up" data-aos-anchor-placement="top-bottom"
 		>
 			<h2 class="krul pb-[4rem]" data-aos="fade-up">Dress Code</h2>
 			<img src={icon3_.src} class="w-[10rem]" alt="icono dress code" data-aos="fade-up"/>
-			<p class="pari pt-[2rem] text-[#487873] text-3xl pb-4" data-aos="fade-up">Summer Formal</p>
-			<p class="pari !text-base md:!text-xl text-[#487873]" data-aos="fade-up">Dado que la ceremonia será al aire libre, en un entorno campestre y cálido, y la recepción se extenderá hasta altas horas de la noche, 
+			<p class="pari pt-[2rem] text-[#487873] text-3xl font-extrabold pb-4" data-aos="fade-up">Summer Formal</p>
+			<p class="questa !text-base md:!text-xl text-[#487873]" data-aos="fade-up">Dado que la ceremonia será al aire libre, en un entorno campestre y cálido, y la recepción se extenderá hasta altas horas de la noche, 
 				el dress code tendrá equilibrio entre elegancia, frescura y comodidad.</p>
 			<div class="reserved text-center pt-4" data-aos="fade-up">
-				<p class="pari text-2xl" data-aos="fade-up"><b>Mujeres:</b> Evitar el color blanco y rojo para mujeres</p>
-				<p class="pari text-2xl" data-aos="fade-up"><b>Hombres:</b> Evitar el traje azul para los hombres</p>
+				<p class="questa text-2xl" data-aos="fade-up"><b>Mujeres:</b> Evitar el color blanco y rojo</p>
+				<p class="questa text-2xl" data-aos="fade-up"><b>Hombres:</b> Evitar el traje azul</p>
 			</div>
 			<div class="mt-auto pt-[3rem]" data-aos="fade-up">
 				<a href="/dresscode" class="questa internalPage text-lg inline-block border-b border-transparent hover:border-current transition-all">
@@ -145,9 +166,11 @@ const logo_ = await getImage({ src: logo });
 		<img src={flor_1.src} alt="flor 1" class="absolute bottom-[-15%] md:bottom-[-40%] left-0 z-1 !w-[80%] md:!w-[40%]" data-aos="fade-up"/>
 	</div>
 	<div class="section8_container flex flex-col items-center justify-center h-120 md:h-250 snap-section relative">
-		<img class="!mb-[3rem]" src={icon4_.src} alt="icono lluvia de sobres" data-aos="fade-up" data-aos-anchor-placement="top-up"/>
-		<div class="sobres" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+		<img class="!mb-[3rem] !w-[80%] md:!w-[15%]" src={icon4_.src} alt="icono lluvia de sobres" data-aos="fade-up" data-aos-anchor-placement="top-up"/>
+		<div class="sobres flex flex-col items-center justify-center" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
 			<span class="questa !text-green-900">Lluvia de sobres</span>
+			<p class="questa !text-xl md:!text-2xl pt-[3rem] !w-[80%] md:!w-[40%] text-center text-[#487873]">"Lo único obligatorio es que vengas a celebrar. Aceptamos abrazos, risas y bailes, pero si además quieres dejarnos un sobrecito, 
+				prometemos convertirlo en aventuras y futuros antojos de pizza en pareja."</p>
 		</div>
 		<img src={flor_2.src} alt="flor 2" class="absolute bottom-[-50%] md:bottom-[-50%] right-0 z-1 !w-[80%] md:!w-[40%]" data-aos="fade-up"/>
 	</div>
@@ -175,7 +198,7 @@ const logo_ = await getImage({ src: logo });
 				<img src={logo_.src} class="p-3" alt="logo"/>
 			</div>
 		</div>
-		<img src={flor_1.src} alt="flor 2" class="absolute bottom-[-20%] md:bottom-[-40%] left-0 z-1 !w-[80%] md:!w-[40%] overflow-hidden" data-aos="fade-up"/>
+		<img src={flor_1.src} alt="flor 2" class="absolute bottom-[-20%] md:bottom-[-40%] left-0 z-1 !w-[80%] md:!w-[40%] overflow-hidden" data-aos="fade-down"/>
 	</div>
 	
 	<!-- <button id="btnReproducir">

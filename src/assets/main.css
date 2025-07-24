@@ -12,6 +12,7 @@
 @font-face {
     font-family: 'questa';
     src: url('/src/assets/fonts/Poppins-SemiBold.ttf') format('truetype'); 
+    src: url('/src/assets/fonts/Poppins-Regular.ttf') format('truetype'); 
 }
 @font-face {
     font-family: 'pari';
@@ -25,6 +26,7 @@
 }
 .questa{
     font-family: 'questa';
+    font-weight: 400;
 }
 .pari{
     font-family: 'pari';
