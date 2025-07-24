@@ -45,6 +45,21 @@ const flor_1 = await getImage({ src: flor1 });
 const flor_2 = await getImage({ src: flor2 });
 
 const logo_ = await getImage({ src: logo });
+
+const tituloEvento = "Boda de Juan & Diana";
+const fechaInicio = "2025-09-27T15:30:00";
+const fechaFin = "2025-09-28T01:00:00";
+const zonaHoraria = "America/Bogota";
+const descripcionEvento = "¡Celebra con nosotros el día más importante de nuestras vidas! No olvides confirmar tu asistencia.";
+const ubicacionEvento = "Casa Borinquen, Sector Piedragrande, Vía Puerto Tejada, Cali, Valle del Cauca";
+
+// --- Formateo de fechas para los enlaces (formato UTC sin guiones ni dos puntos) ---
+const formatoFechaUTC = (fecha: any) => new Date(fecha).toISOString().replace(/[-:]|\.\d{3}/g, '');
+
+const googleFecha = `${formatoFechaUTC(fechaInicio)}/${formatoFechaUTC(fechaFin)}`;
+
+// --- Generación de los enlaces ---
+const googleLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(tituloEvento)}&dates=${googleFecha}&details=${encodeURIComponent(descripcionEvento)}&location=${encodeURIComponent(ubicacionEvento)}&ctz=${zonaHoraria}`;
 ---
 
 <section class="main">
@@ -62,7 +77,7 @@ const logo_ = await getImage({ src: logo });
 	<div class="section2_container flex items-center justify-center snap-section h-150 md:h-250 !pt-[2rem] !pb-[7rem] relative" style={`background-image: url(${bgImage_2.src});`}>
 		<img src={us_.src} alt="us" class="!w-[70%] md:!w-[30%]" data-aos="fade-up"/>
 	</div>
-	<div class="section3_container flex flex-col items-center justify-center snap-section h-180 md:h-250 !pt-[10rem] !pb-[7rem] relative" style={`background-image: url(${bgImage_2.src});`}>
+	<div class="section3_container flex flex-col items-center justify-center snap-section !pt-[20rem] !pb-[10rem] md:!pt-[18rem] md:!pb-[7rem] relative" style={`background-image: url(${bgImage_2.src});`}>
 		<img src={flor_2.src} alt="flor 2" class="absolute top-[-20%] md:top-[-30%] right-0 z-1 !w-[80%] md:!w-[50%]" data-aos="fade-up"/>
 		<h2 class="pari !text-3xl md:!text-6xl pb-[2rem]" data-aos="fade-up">¡Nos casamos!</h2>
 		<p class="questa green text-center !text-base md:!text-2xl pb-[2rem]" data-aos="fade-up">Nuestra historia comenzó cuando apenas aprendíamos a soñar, crecimos juntos, 
@@ -86,19 +101,18 @@ const logo_ = await getImage({ src: logo });
 					<div id="contador">
 						<Contador client:load />
 					</div>
-					<div class="text-center my-8">
-						<a 
-							href="/evento-boda.ics" 
-							download="Boda-Juan-y-Diana.ics"
-							class="inline-block bg-brand-gold text-white font-bold py-3 px-6 rounded-full shadow-lg hover:bg-opacity-90 transition-all"
-						>
-							<i class="far fa-calendar-plus mr-2"></i>
-							Añadir a mi Calendario
-						</a>
-						</div>
-					</div>
+				</div>
 				<div class="text-center" data-aos="fade-up">
 					<p class="filosofia !text-4xl md:!text-6xl !text-green-900">27 DE SEPTIEMBRE 2025</p>
+				</div>
+				<div class="text-center my-8">
+					<a 
+						href={googleLink} 
+						target="_blank" 
+						class="internalPage" 
+					>
+						Añadir a mi calendario
+					</a>
 				</div>
 			</div>
 		</div>
@@ -122,7 +136,9 @@ const logo_ = await getImage({ src: logo });
 				</div>
 				
 				<div class="mt-auto" data-aos="fade-up">
-					<a class="questa text-lg inline-block border-b border-transparent hover:border-current transition-all" href="https://maps.app.goo.gl/1QGEw8jfaj27kS2F6" target="_blank">
+					<a 
+						class="questa text-lg inline-block border-b border-transparent hover:border-current transition-all" 
+						href="https://maps.app.goo.gl/1QGEw8jfaj27kS2F6" target="_blank">
 						Cómo llegar
 					</a>
 				</div>
