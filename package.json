@@ -11,9 +11,11 @@
   "dependencies": {
     "@astrojs/svelte": "^7.1.0",
     "@astrojs/vercel": "^8.1.5",
+    "@iconify-json/bi": "^1.2.4",
     "@tailwindcss/vite": "^4.1.11",
     "aos": "^2.3.4",
     "astro": "^5.9.3",
+    "astro-icon": "^1.1.5",
     "photoswipe": "^5.4.4",
     "react-countdown": "^2.3.6",
     "svelte": "^5.36.8",

@@ -5,6 +5,8 @@ import '../assets/style.css';
 import '../assets/main.css';
 import Contador from '../components/Count.svelte';
 import Carrusel from '../components/Carrusel.astro';
+import Reproductor from '../components/Reproductor.astro';
+
 import icon1 from '../assets/images/icon1.png';
 import icon2 from '../assets/images/icon2.png';
 import icon3 from '../assets/images/icon3.png';
@@ -69,10 +71,13 @@ const googleLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=
 			<div class="rounded-full !w-[15%] md:!w-[8%]" style="background:#BBA15D" data-aos="fade-up">
 				<img src={logo_.src} class="p-3" alt="logo"/>
 			</div>
-			<h1 class="krul green text-center !text-6xl md:!text-8xl pb-4 !mt-[3rem]" data-aos="fade-up">Juan & Diana</h1>
-			<p class="filosofia green text-center pt-[1rem] pb-[3rem] !text-2xl md:!text-5xl" data-aos="fade-up">SEPTIEMBRE 27 DEL 2025</p>
+			<h1 class="krul green text-center !text-6xl md:!text-8xl pb-4 !mt-[3rem]" data-aos="fade-left">Juan & Diana</h1>
+			<p class="filosofia green text-center pt-[1rem] pb-[2rem] !text-2xl md:!text-5xl" data-aos="fade-right">SEPTIEMBRE 27 DEL 2025</p>
+			<div class="pb-[3rem] z-2" data-aos="fade-up">
+				<Reproductor/>
+			</div>
 		</div>
-		<img src={flor_1.src} alt="flor 1" class="absolute bottom-[-10%] md:bottom-[-30%] left-0 z-1 !w-[80%] md:!w-[50%]" data-aos="fade-down"/>
+		<img src={flor_1.src} alt="flor 1" class="absolute bottom-[-10%] md:bottom-[-30%] left-0 z-1 !w-[80%] md:!w-[50%]" data-aos="fade-up" data-aos-anchor-placement="top-center"/>
 	</div>
 	<div class="section2_container flex items-center justify-center snap-section h-150 md:h-250 !pt-[2rem] !pb-[7rem] relative" style={`background-image: url(${bgImage_2.src});`}>
 		<img src={us_.src} alt="us" class="!w-[70%] md:!w-[30%]" data-aos="fade-up"/>
@@ -97,15 +102,15 @@ const googleLink = `https://www.google.com/calendar/render?action=TEMPLATE&text=
 	<div class="section4_container flex items-center justify-center snap-section !pt-[13rem] !pb-[7rem] md:!pt-[10rem] md:!pb-[7rem] relative">
 		<div class="flex flex-col items-center justify-center">
 			<div class="col-12 col-md-8 offset-md-2">
-				<div data-aos="fade-up">
+				<div data-aos="fade-in">
 					<div id="contador">
 						<Contador client:load />
 					</div>
 				</div>
-				<div class="text-center" data-aos="fade-up">
+				<div class="text-center" data-aos="fade-down">
 					<p class="filosofia !text-4xl md:!text-6xl !text-green-900">27 DE SEPTIEMBRE 2025</p>
 				</div>
-				<div class="text-center my-8">
+				<div class="text-center my-8" data-aos="fade-up">
 					<a 
 						href={googleLink} 
 						target="_blank" 
