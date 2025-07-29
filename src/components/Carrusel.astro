@@ -1,23 +1,33 @@
 ---
 const modulosDeImagenes = await import.meta.glob('/src/assets/gallery/*.{jpeg,jpg,png,gif,JPG,JPEG,PNG}');
 
-const imagenes = [
-  { src: '../src/assets/gallery/1.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/2.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/3.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/4.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/5.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/6.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/7.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/8.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/9.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/10.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/11.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/12.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/13.jpg', width: 1125, height: 1500 },
-  { src: '../src/assets/gallery/14.jpg', width: 1125, height: 1500 },
-];
+// const imagenes = [
+//   { src: '../src/assets/gallery/1.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/2.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/3.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/4.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/5.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/6.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/7.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/8.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/9.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/10.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/11.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/12.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/13.jpg', width: 1125, height: 1500 },
+//   { src: '../src/assets/gallery/14.jpg', width: 1125, height: 1500 },
+// ];
 
+const imagenes = await Promise.all(
+  Object.values(modulosDeImagenes).map(async (importarImagen) => {
+    const imagen: any = await importarImagen();
+    return {
+      src: imagen.default.src,
+      width: imagen.default.width,
+      height: imagen.default.height,
+    };
+  })
+);
 
 ---
 <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css" />
