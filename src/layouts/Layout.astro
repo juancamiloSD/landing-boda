@@ -1,5 +1,6 @@
 ---
 import "../assets/main.css";
+import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
 <!doctype html>
@@ -17,6 +18,7 @@ import "../assets/main.css";
 	</head>
 	<body>
 		<slot />
+		<SpeedInsights />
 		<script>
 			import AOS from 'aos';
 			import 'aos/dist/aos.css';
