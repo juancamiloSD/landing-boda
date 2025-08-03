@@ -1,5 +1,5 @@
 ---
-const modulosDeImagenes = import.meta.glob('/src/assets/gallery/*.{jpeg,jpg,png,gif,JPG,JPEG,PNG}');
+const modulosDeImagenes = import.meta.glob('/src/assets/gallery/*.{jpeg,jpg,png,gif,JPG,JPEG,PNG,avif}');
 
 const imagenes = await Promise.all(
   Object.values(modulosDeImagenes).map(async (importarImagen) => {
