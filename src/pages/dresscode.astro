@@ -10,8 +10,11 @@ import ref3 from '../assets/dresscode/mujer-ref3.jpg';
 import ref4 from '../assets/dresscode/mujer-ref4.jpg';
 import ref5 from '../assets/dresscode/mujer-ref5.jpg';
 import ref6 from '../assets/dresscode/hombre-ref1.jpg';
-import ref7 from '../assets/dresscode/hombre-ref2.jpg';
+import ref7 from '../assets/dresscode/hombre-ref2.png';
 import ref8 from '../assets/dresscode/hombre-ref3.jpg';
+import ref9 from '../assets/dresscode/hombre-ref4.png';
+import ref10 from '../assets/dresscode/hombre-ref5.png';
+
 
 import flor1 from '../assets/images/flor1.png';
 import flor2 from '../assets/images/flor2.png';
@@ -28,6 +31,8 @@ const ref5_ = await getImage({ src: ref5 });
 const ref6_ = await getImage({ src: ref6 });
 const ref7_ = await getImage({ src: ref7 });
 const ref8_ = await getImage({ src: ref8 });
+const ref9_ = await getImage({ src: ref9 });
+const ref10_ = await getImage({ src: ref10 });
 
 const flor_1 = await getImage({ src: flor1 });
 const flor_2 = await getImage({ src: flor2 });
@@ -43,6 +48,8 @@ const galeriaImagenes = [
   { thumb: ref6.src, full: ref6.src, width: ref6.width, height: ref6.height, alt: "Referencia 6" },
   { thumb: ref7.src, full: ref7.src, width: ref7.width, height: ref7.height, alt: "Referencia 7" },
   { thumb: ref8.src, full: ref8.src, width: ref8.width, height: ref8.height, alt: "Referencia 8" },
+    { thumb: ref9.src, full: ref9.src, width: ref9.width, height: ref9.height, alt: "Referencia 9" },
+    { thumb: ref10.src, full: ref10.src, width: ref10.width, height: ref10.height, alt: "Referencia 10" }
 ];
 ---
 <link rel="stylesheet" href="https://unpkg.com/photoswipe/dist/photoswipe.css" />
