@@ -1,5 +1,6 @@
 ---
 import "../assets/main.css";
+import favicon from '../assets/favicon.png';
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 ---
 
@@ -8,7 +9,7 @@ import  SpeedInsights  from "@vercel/speed-insights/astro"
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/png" href={favicon.src} />		
 		<meta name="generator" content={Astro.generator} />
 		<title>Juan & Diana - Wedding</title>
 	</head>
